@@ -2,23 +2,46 @@
 #include <stdlib.h>
 #include <math.h>
 
-int main()
-{
-    int contador, numeros; // variável de controle do loop
-    int acumulador = 0;
+// Ler um vetor D de 10 elementos. Retire todos os valores nulos ou negativos do vetor D. Escrever o vetor
+// após a retirada dos nulos e negativos.
 
-    for (contador = 1; contador <= 20; contador++)
+void bubbleSort(int arr[], int num)
+{
+
+    int x, y, temp;
+
+    for (x = 0; x < num - 1; x++)
     {
 
-        printf("Digite um numero: ");
-        scanf("%d", &numeros);
-
-        if (numeros % 2 == 0)
+        for (y = 0; y < num - x - 1; y++)
         {
-            acumulador = acumulador + 1;
+
+            if (arr[y] > arr[y + 1])
+            {
+
+                temp = arr[y];
+
+                arr[y] = arr[y + 1];
+
+                arr[y + 1] = temp;
+            }
         }
     }
+}
 
-    printf("Numeros pares: %d \n", acumulador);
-    return 0;
+int main()
+{
+
+    int arr[10] = {11, -1, -2, -3, 4, 5, -6, 7, 8, 9}, position = 0, c;
+    int n = 10, x;
+
+    bubbleSort(arr, n);
+
+    printf("Ordenando o Vetor: ");
+
+    for (x = 0; x < n; x++)
+    {
+
+        printf("%d  ", arr[x]);
+    }
 }
