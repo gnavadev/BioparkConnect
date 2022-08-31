@@ -1,0 +1,2 @@
+
+        printf(nome[i]);

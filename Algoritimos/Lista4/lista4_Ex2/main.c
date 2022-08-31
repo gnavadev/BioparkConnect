@@ -1,11 +1,16 @@
 #include <stdio.h>
 int main()
 {
-    int vetor[10];
+    int tamanhoVetor = 0;
     int par = 0, impar = 0, maior = 0, menor = 0, i;
+
+    printf("Digite o tamanho do vetor: \n");
+    scanf("%d", &tamanhoVetor);
+    int vetor[tamanhoVetor];
+
     /* Ler vetores a e b */
     printf("Adicione os elmentos do vetor a:\n");
-    for (i = 0; i < 10; i++)
+    for (i = 0; i < tamanhoVetor; i++)
     {
         scanf("%d", &vetor[i]);
 
@@ -15,7 +20,7 @@ int main()
         else if (vetor[i] % 2 != 0)
             impar = impar + 1;
 
-        else if (vetor[i] > 50)
+        if (vetor[i] > 50)
             maior = maior + 1;
 
         else if (vetor[i] < 7)
