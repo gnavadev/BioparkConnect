@@ -43,6 +43,19 @@ void ordena(struct Data vet[], int tam)
     {
         for (j = 0; j < (tam - 1 - i); j++)
         {
+            if (vet[j].dia > vet[j + 1].dia)
+            {
+                temp = vet[j];
+                vet[j] = vet[j + 1];
+                vet[j + 1] = temp;
+            }
+            if (vet[j].mes > vet[j + 1].mes)
+            {
+                temp = vet[j];
+                vet[j] = vet[j + 1];
+                vet[j + 1] = temp;
+            }
+
             if (vet[j].ano > vet[j + 1].ano)
             {
                 temp = vet[j];
